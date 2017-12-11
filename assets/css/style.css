@@ -1,0 +1,28 @@
+body {background-color: blue;
+}
+.col-md-8{background-color: grey;}
+
+.instructionText, h1, h4, .computerNumber, .guessNumber{ font-family: 'Spectral SC', serif;}
+
+.bodyLine{
+
+	height:0rem;
+	border-color:black;
+
+}
+.computerInput, .playerInput {
+
+	background-color:#fff;
+}
+
+.playerNum, .computerNum {
+
+	margin-bottom: 3rem;
+}
+
+.airplane1, .airplane2, .airplane3, .airplane4{
+
+	width:10rem;
+	height:10rem;
+	margin: auto;
+}
