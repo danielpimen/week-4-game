@@ -14,20 +14,70 @@ $(document).ready(function startGame() {
     var airplane2 = Math.floor(Math.random() * 12) + 1;
     var airplane3 = Math.floor(Math.random() * 12) + 1;
     var airplane4 = Math.floor(Math.random() * 12) + 1;
+    counter=0
+    console.log(airplane1, airplane2, airplane3, airplane4)
 
     //on click events linked to airplanes
-    $('img.airplane1').click(function airplane1() {
-        alert('it works');
+    $('img.airplane1').click(function airPlane1() {
+    	
+    	counter = counter + airplane1;
+    	$('h5.guessNumber').html(counter);
+    	if (counter==computerRandom){
+    		alert('You Win');
+    		startGame();
+    		wins ++;
+    	}
+    	else if (counter > computerRandom){
+    		alert('You Lose');
+    		startGame();
+    		losses ++;
+    	}
+
+
+
     })
-    var airplane1Num = airplane1 - 1;
-    $('img.airplane2').click(function airplane2() {
-        alert('it works');
+
+    $('img.airplane2').click(function airPlane2() {
+        counter = counter + airplane2;
+    	$('h5.guessNumber').html(counter);
+    	if (counter==computerRandom){
+    		alert('You Win');
+    		startGame();
+    		wins ++;
+    	}
+    	else if (counter > computerRandom){
+    		alert('You Lose');
+    		startGame();
+    		losses ++;
+    	}
     })
-    $('img.airplane3').click(function airplane3() {
-        alert('it works');
+    $('img.airplane3').click(function airPlane3() {
+        counter = counter + airplane3;
+    	$('h5.guessNumber').html(counter);
+    	if (counter==computerRandom){
+    		alert('You Win')
+    		startGame();
+    		wins ++;
+    	}
+    	else if (counter > computerRandom){
+    		alert('You Lose');
+    		startGame();
+    		losses ++;
+    	}
     })
-    $('img.airplane4').click(function airplane4() {
-        alert('it works');
+    $('img.airplane4').click(function airPlane4() {
+        counter = counter + airplane4;
+    	$('h5.guessNumber').html(counter);
+    	if (counter==computerRandom){
+    		startGame();
+    		alert('You Win');
+    		wins ++;
+    	}
+    	else if (counter > computerRandom){
+    		alert('You Lose');
+    		startGame();
+    		losses ++;
+    	};
     })
 
 
