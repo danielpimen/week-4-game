@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daniel's Airplane Game </title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC:500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:800" rel="stylesheet">
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+    <div class='container-fluid wholePage'>
+        <div class='row mainHeader'>
+            <div class="col-md-12 text-center">
+                <h1 class="pageHeader">Daniel's Airplane Game </h1>
+            </div>
+        </div>
+        <div class='row instructionBody'>
+            <div class='col-md-8 col-md-offset-2 col-sm-8 well border border-dark'>
+                <p class='instructionText'><strong>Instructions: </strong>Each airplane has a hidden numerical value. Click on it to see how much it is. To win, get your number equal to the other number given.</p>
+            </div>
+        </div>
+        <div class='row gameBody'>
+            <div class=' innerBody'>
+                <div class='col-md-8 col-md-offset-2 col-sm-8 well border border-dark'>
+                    <p class='instructionText'>Wins: </p>
+                    <p class='instructionText'>Losses: </p>
+                    <hr class="bodyLine">
+                    <div class='col-md-6 computerNum'>
+                        <h4 class='gameText'>Your Target Number</h4>
+                        <div class='col-md-6 computerInput'>
+                            <h5 class='computerNumber'> 0 </h5>
+                        </div>
+                    </div>
+                    <div class='col-md-6 playerNum'>
+                        <h4 class='gameText'>Your Number</h4>
+                        <div class='col-md-6 playerInput'>
+                            <h5 class='guessNumber'> 0 </h5>
+                        </div>
+                    </div>
+                    <hr class='bodyLine'>
+                    <div class='col-md-3'><img src='assets/images/airplane1.jpg' class='airplane1'> </div>
+                    <div class='col-md-3'><img src='assets/images/airplane2.jpg' class='airplane2'> </div>
+                    <div class='col-md-3'><img src='assets/images/airplane3.jpg' class='airplane3'> </div>
+                    <div class='col-md-3'><img src='assets/images/airplane4.jpg' class='airplane4'> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
