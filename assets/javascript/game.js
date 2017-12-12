@@ -10,33 +10,47 @@ var losses = 0;
 //function startGame
 //random computer/player number
 
-$(document).ready(function startGame() {
-    var computerRandom = Math.floor(Math.random() * 120) + 60;
+$(document).ready(function() {
+
+    var airplane1;
+    var airplane2;
+    var airplane3;
+    var airplane4;
+    var computerRandom;
+    var playerRandom;
+
+    function startGame(){ 
+    computerRandom = Math.floor(Math.random() * 120) + 60;
+    console.log(computerRandom + 'computerRandom');
     $('h5.computerNumber').html(computerRandom);
-    var playerRandom = Math.floor(Math.random() * 50) + 10;
+    playerRandom = Math.floor(Math.random() * 50) + 10;
+    console.log(playerRandom + 'playerRandom');
     $('h5.guessNumber').html(playerRandom);
-    var airplane1 = Math.floor(Math.random() * 12) + 1;
-    var airplane2 = Math.floor(Math.random() * 12) + 1;
-    var airplane3 = Math.floor(Math.random() * 12) + 1;
-    var airplane4 = Math.floor(Math.random() * 12) + 1;
+    airplane1 = Math.floor(Math.random() * 12) + 1;
+    airplane2 = Math.floor(Math.random() * 12) + 1;
+    airplane3 = Math.floor(Math.random() * 12) + 1;
+    airplane4 = Math.floor(Math.random() * 12) + 1;
+
+
 
     //give airplanes random values
 
-    counter = playerRandom + 0;
-    console.log(airplane1, airplane2, airplane3, airplane4)
+    // var counter= playerRandom + 0;
+    // var counter = 0;
+    console.log('playerRandom ', playerRandom);
+    console.log(airplane1, airplane2, airplane3, airplane4);
 
-    //on click events linked to airplanes
-
-    
-    $('img.airplane1').click(function airPlane1() {
-
-        counter = counter + airplane1;
-        $('h5.guessNumber').html(counter);
-        if (counter == computerRandom) {
+    }
+    $('img.airplane1').click(function() {
+        console.log('before add ap1 ', playerRandom);
+        playerRandom = playerRandom + airplane1;
+        console.log('after add ap1', playerRandom);
+        $('h5.guessNumber').html(playerRandom);
+        if (playerRandom == computerRandom) {
             alert('You Win');
             win();
 
-        } else if (counter > computerRandom) {
+        } else if (playerRandom > computerRandom) {
             alert('You Lose');
             lose();
 
@@ -46,45 +60,91 @@ $(document).ready(function startGame() {
 
     })
 
-    $('img.airplane2').click(function airPlane2() {
-        counter = counter + airplane2;
-        $('h5.guessNumber').html(counter);
-        if (counter == computerRandom) {
+    $('img.airplane2').click(function(){
+        playerRandom= playerRandom + airplane2;
+        $('h5.guessNumber').html(playerRandom);
+        if (playerRandom== computerRandom){
             alert('You Win');
-            win();
-
-        } else if (counter > computerRandom) {
+            win()
+        }
+        else if (playerRandom > computerRandom) {
             alert('You Lose');
             lose();
-
         }
     })
-    $('img.airplane3').click(function airPlane3() {
-        counter = counter + airplane3;
-        $('h5.guessNumber').html(counter);
-        if (counter == computerRandom) {
-            alert('You Win')
-            win();
 
-        } else if (counter > computerRandom) {
+    $('img.airplane3').click(function(){
+        playerRandom= playerRandom + airplane3;
+        $('h5.guessNumber').html(playerRandom);
+        if (playerRandom== computerRandom){
+            alert('You Win');
+            win()
+        }
+        else if (playerRandom > computerRandom) {
             alert('You Lose');
             lose();
-
         }
     })
-    $('img.airplane4').click(function airPlane4() {
-        counter = counter + airplane4;
-        $('h5.guessNumber').html(counter);
-        if (counter == computerRandom) {
-            win();
-            alert('You Win');
 
-        } else if (counter > computerRandom) {
+    $('img.airplane4').click(function(){
+        playerRandom= playerRandom + airplane4;
+        $('h5.guessNumber').html(playerRandom);
+        if (playerRandom== computerRandom){
+            alert('You Win');
+            win()
+        }
+        else if (playerRandom > computerRandom) {
             alert('You Lose');
             lose();
-
-        };
+        }
     })
+
+   // $('img').click(function() {
+    //    var value = $(this).attr('data-value'); //30
+    //})
+
+    // $('img.airplane2').click(function airPlane2() {
+    //     counter = counter + airplane2;
+    //     $('h5.guessNumber').html(counter);
+    //     if (counter == computerRandom) {
+    //         alert('You Win');
+    //         win();
+
+    //     } else if (counter > computerRandom) {
+    //         alert('You Lose');
+    //         lose();
+
+    //     }
+    // })
+    // $('img.airplane3').click(function airPlane3() {
+    //     counter = counter + airplane3;
+    //     $('h5.guessNumber').html(counter);
+    //     if (counter == computerRandom) {
+    //         alert('You Win')
+    //         win();
+
+    //     } else if (counter > computerRandom) {
+    //         alert('You Lose');
+    //         lose();
+
+    //     }
+    // })
+    // $('img.airplane4').click(function airPlane4() {
+    //     counter = counter + airplane4;
+    //     $('h5.guessNumber').html(counter);
+    //     if (counter == computerRandom) {
+    //         win();
+    //         alert('You Win');
+
+    //     } else if (counter > computerRandom) {
+    //         alert('You Lose');
+    //         lose();
+
+       
+    //     };
+    // })
+
+    startGame();
 
     function restartGame() {
 
@@ -105,7 +165,8 @@ $(document).ready(function startGame() {
         $('.instructionText1').text('Wins: ' + wins);
 
         console.log('hello');
-        restartGame();
+        // restartGame();
+        startGame();
     }
 
     function lose() {
@@ -113,7 +174,8 @@ $(document).ready(function startGame() {
         losses++;
         $('.instructionText2').text('Losses: ' + losses);
         console.log('hello');
-        restartGame();
+        // restartGame();
+        startGame();
     }
 
 
